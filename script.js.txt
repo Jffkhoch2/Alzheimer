@@ -1,0 +1,19 @@
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Verhindert das Absenden des Formulars
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const formMessage = document.getElementById('form-message');
+
+    if (name && email && message) {
+        formMessage.textContent = 'Vielen Dank für Ihre Nachricht!';
+        formMessage.style.color = 'green';
+
+        // Optionale: Formular zurücksetzen
+        document.getElementById('contact-form').reset();
+    } else {
+        formMessage.textContent = 'Bitte füllen Sie alle Felder aus.';
+        formMessage.style.color = 'red';
+    }
+});
